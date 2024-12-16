@@ -28,9 +28,16 @@ To set up your development environment using the scripts in this repository, fol
     cd odoo_scripts
     
 3. Run the Script File:
+For Odoo 15 (v15):
     ./odoo15.sh
+    
+For Odoo 16 (v16):
     ./odoo16.sh
+    
+For Odoo 17 (v17):
     ./odoo17.sh
+    
+For Odoo 18 (v18):
     ./odoo18.sh
     
     
