@@ -40,6 +40,7 @@ For support or inquiries, please open an issue in the repository or contact me d
 For more updates and to stay connected, feel free to follow me on:
 
 LinkedIn: https://www.linkedin.com/in/sumesh-t-0b5357191/
+
 GitHub: https://github.com/sumesh17
 
 Stay tuned for the latest updates and innovations!
