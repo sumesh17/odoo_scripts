@@ -94,7 +94,7 @@ echo "====================== DIRECTORY SETUP START ============================"
 echo ""
 
 # Directory setup
-odoo_dir="$HOME/workspace/odoo-17"
+odoo_dir="$HOME/workspace"
 if [ -d "$odoo_dir" ]; then
     echo "Directory '$odoo_dir' already exists."
 else
@@ -186,7 +186,7 @@ if ! grep -q "alias v17=" "$bashrc"; then
     echo "# Aliases for virtual environment 17 and directories" >> "$bashrc"
     echo "alias v17=\"source $venv_dir/bin/activate\"" >> "$bashrc"
     echo "alias d=\"deactivate\"" >> "$bashrc"
-    echo "alias 17=\"source $venv_dir/bin/activate && cd $odoo_dir\"" >> "$bashrc"
+    echo "alias 17=\"source $venv_dir/bin/activate && cd $odoo_dir/odoo_17\"" >> "$bashrc"
     echo "Aliases added successfully!"
 else
     echo "Aliases already exist in '$bashrc'."
