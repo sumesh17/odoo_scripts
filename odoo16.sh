@@ -35,6 +35,24 @@ echo ""
 # Install essential development libraries
 sudo apt-get install -y libpq-dev
 
+echo ""
+echo "====================== CHECKING AND INSTALLING PIP ======================"
+echo ""
+
+# Check if pip3 is installed
+if ! command -v pip3 &>/dev/null; then
+    echo "pip3 is not installed. Installing pip3..."
+    sudo apt install -y python3-pip
+    if [ $? -eq 0 ]; then
+        echo "pip3 has been installed successfully!"
+    else
+        echo "Error: Failed to install pip3. Please check your system settings."
+        exit 1
+    fi
+else
+    echo "pip3 is already installed!"
+fi
+
 if [ $? -eq 0 ]; then
     echo "System dependency 'libpq-dev' has been installed successfully!"
 else
