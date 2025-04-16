@@ -32,8 +32,15 @@ echo ""
 echo "====================== INSTALLING SYSTEM DEPENDENCIES =================="
 echo ""
 
-# Install essential development libraries
-sudo apt-get install -y libpq-dev
+# Install essential development libraries for Odoo and python-ldap
+sudo apt-get install -y libpq-dev libsasl2-dev python3-dev libldap2-dev libssl-dev
+
+if [ $? -eq 0 ]; then
+    echo "All required system dependencies have been installed successfully!"
+else
+    echo "Error: Failed to install one or more system dependencies. Please check your system settings."
+    exit 1
+fi
 
 echo ""
 echo "====================== CHECKING AND INSTALLING PIP ======================"
@@ -51,13 +58,6 @@ if ! command -v pip3 &>/dev/null; then
     fi
 else
     echo "pip3 is already installed!"
-fi
-
-if [ $? -eq 0 ]; then
-    echo "System dependency 'libpq-dev' has been installed successfully!"
-else
-    echo "Error: Failed to install 'libpq-dev'. Please check your system settings."
-    exit 1
 fi
 
 echo ""
@@ -127,7 +127,7 @@ echo ""
 
 # Clone Odoo 16 repository
 if [ ! -d "odoo_16" ]; then
-   git clone https://github.com/odoo/odoo.git --branch=16.0 --depth=1 odoo_16
+    git clone https://github.com/odoo/odoo.git --branch=16.0 --depth=1 odoo_16
     if [ $? -eq 0 ]; then
         echo "Odoo 16 repository has been cloned successfully!"
     else
@@ -257,3 +257,4 @@ echo "LinkedIn: https://www.linkedin.com/in/sumesh-t-0b5357191/"
 echo "GitHub: https://github.com/sumesh17"
 echo ""
 echo "Stay tuned for the latest updates and innovations!"
+
